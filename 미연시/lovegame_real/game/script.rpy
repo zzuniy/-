@@ -289,11 +289,17 @@ image garden2   = im.Scale("background/화원2.jpg", 1280, 720)
 
 # --- 등장 캐릭터 스탠딩 (정확한 Transform 문법) ---
 image prof1:
-    "character/char1.png"
+    "character/prof.png"
     zoom 0.5
 
 image rai:
     "character/rai.png"
+    zoom 0.5
+image miff:
+    "character/miff.png"
+    zoom 0.5
+image rona:
+    "character/rona.png"
     zoom 0.5
 image sky:
     "character/sky.png"
@@ -585,6 +591,7 @@ label story_continue:
 label first_meeting:
 
     scene class1 with fade
+    show miff at rightChar with dissolve
     play music "audio/bgm/미분_급식.mp3" fadein 2.0
 
     ex "점심시간. 교실 안은 떠들썩하다. 주인공은 도시락을 들고 복도로 나선다."
@@ -633,6 +640,7 @@ label first_meeting:
 
     # --- 급식실 씬 ---
     scene cafeteria1 with fade
+    show miff at rightChar with dissolve
 
     ex "두 사람은 마주 앉아 식사를 시작한다."
 
@@ -865,6 +873,7 @@ label rooftop_scene:
     ex "하지만 난간 쪽, 바람이 스치듯 흩날리는 머리카락 사이로 한 사람이 서 있었다."
     ex "회색 교복 재킷을 느슨하게 입고, 단추는 거의 잠그지 않은 채."
     ex "짙은 눈매, 사탕을 굴리는 듯한 입놀림 — 한로나."
+    show rona at rightChar with dissolve
 
     $ fairy_text = "로나는 바이러스 특성상 고립을 선호하지만, 관찰자의 친절에 반응할 수 있어요."
     show screen fairy_icon 
