@@ -479,7 +479,18 @@ label start:
 
     prof "좋아, 오늘은 여기까지. 전학생, 모르는 거 있으면 반장에게 물어봐."
     hide prof1 with dissolve
+    
+    $ fairy_text = "라이의 몸 속에는 '세포 골격'이라고 불리는 단단한 구조가 있어. 이건 세포 안에서 형태를 유지하고 힘을 전달하는 일종의 뼈대야. 우리 근육이 수축하는 방식도 세포 골격에서 유래된 거야. 그래서 겉모습은 말랑해 보여도, 라이의 몸은 의외로 굉장히 튼튼해."
 
+    show screen fairy_icon 
+    npc "알림! 새로운 지식 해제!"
+
+    # 사용자가 클릭할 때까지 기다림
+    while not fairy_clicked:
+        $ renpy.pause(0.1, hard=True)  # 0.1초마다 체크
+
+    hide screen fairy_icon
+    $ fairy_clicked = False
     rai "자, 여기가 네 자리야. 첫날이라 낯설지? 내가 학교 구경 좀 시켜줄까?"
     me "정말? 고마워. 사실 아직도 좀 얼떨떨해서…"
 
@@ -490,6 +501,16 @@ label start:
     rai "여기가 우리 교무실, 저쪽은 도서관. 참고로 난 여기서 시간을 제일 많이 보내. 조용하고 공부하기 좋거든."
     me "역시 반장답네… 공부 잘하나 봐?"
     rai "음… 늘 2등이지 뭐. 1등은 다른 사람이 있어서. 하하."
+    $ fairy_text = "라이는 힘도 좋고 센스도 있지만, 끝까지 집중이 오래 가지 않아. 이건 라이 몸 속에 있는 '아드레날린' 때문이야. 아드레날린은 흥분하거나 긴장했을 때 순간적으로 힘과 속도를 올려주는 호르몬이야. 하지만 효과가 짧고 금방 소모돼. 그래서 라이처럼 아드레날린 반응이 강한 성격은 시작은 압도적으로 빠르지만, 마지막에 집중력이 떨어지기 쉬워. 즉, 라이가 항상 1등을 놓치고 2등이 되는 건 실력이 약해서가 아니라, 체내 호르몬 반응 특성이 다른 사람보다 강하게 나타나기 때문이야."
+    show screen fairy_icon 
+    npc "알림! 새로운 지식 해제!"
+
+    # 사용자가 클릭할 때까지 기다림
+    while not fairy_clicked:
+        $ renpy.pause(0.1, hard=True)  # 0.1초마다 체크
+
+    hide screen fairy_icon
+    $ fairy_clicked = False
     me "(…속으로) 경쟁심이 있구나."
 
     rai "아, 그리고 급식실은 저쪽. 메뉴는 은근히 괜찮아. 미생물 학교라곤 해도 다 먹을 수 있는 음식들이 나오거든. 네 체질도 고려해 줄 거야."
@@ -620,6 +641,18 @@ label first_meeting:
     me "괜찮아요. 학교에서 조정해주신대요. 라이가 알려줬어요."
 
     diff "라이라… 반장 말이지? 하, 똑 부러지게 생겼더라 그 친구. 난 그런 스타일은 좀 어렵다."
+    
+    $ fairy_text = "미분이의 감정 변화가 빠른 건 세포 속 물의 이동 때문이야. 세포는 농도 차이에 따라 물이 오고 가는 '삼투압' 원리에 민감해. 물이 들어오면 부풀고, 나가면 쪼그라들지. 그래서 외부 자극이나 분위기 변화에 따라 감정이 즉시 바뀌는 것처럼 보일 수 있어."
+
+    show screen fairy_icon 
+    npc "알림! 새로운 지식 해제!"
+
+    # 사용자가 클릭할 때까지 기다림
+    while not fairy_clicked:
+        $ renpy.pause(0.1, hard=True)  # 0.1초마다 체크
+
+    hide screen fairy_icon
+    $ fairy_clicked = False
     diff "나같이 둔한 아메바는 빠릿한 애 보면 좀 위축된다고 해야 하나…"
 
     me "저는 미분이 씨가 편한데요. 천천히 말해줘서 좋아요."
@@ -728,6 +761,18 @@ char2 "아, 이건… 연립방정식에서 로그 항을 정리해야 해. 여�
 ex "하늘이가 펜을 들어 조용히 문제를 풀어준다. 필체가 아주 단정하다."
 
 me "와… 진짜 깔끔하다. 설명도 이해가 잘 돼."
+show sky at rightChar with dissolve
+$ fairy_text = "하늘이는 늘 노트를 가득 채우며 공부하는데, 그건 그냥 성실해서가 아니야. 자기 자신을 이해하고 싶어서야. DNA는 세포핵 안에 들어 있는 유전 정보로, 우리 몸을 만들고 유지하는 모든 설계도가 들어 있어."
+
+show screen fairy_icon 
+npc "알림! 새로운 지식 해제!"
+
+# 사용자가 클릭할 때까지 기다림
+while not fairy_clicked:
+    $ renpy.pause(0.1, hard=True)  # 0.1초마다 체크
+
+hide screen fairy_icon
+$ fairy_clicked = False
 
 char2 "다행이다. 사실 나는 누가 이렇게 질문해주면 좋아. 누군가를 도와줄 수 있다는 게, 나한테는… 의미가 있거든."
 
@@ -822,8 +867,6 @@ label rooftop_scene:
     ex "짙은 눈매, 사탕을 굴리는 듯한 입놀림 — 한로나."
 
     $ fairy_text = "로나는 바이러스 특성상 고립을 선호하지만, 관찰자의 친절에 반응할 수 있어요."
-
-
     show screen fairy_icon 
     npc "알림! 새로운 지식 해제!"
 
@@ -848,6 +891,18 @@ label rooftop_scene:
     rona "사실 내가 ‘미생물학교’에 다닌다는 게 말이 안 된다고 하는 사람도 있지."
     rona "여긴... 내가 있을 곳이 아닌 것 같아."
 
+    $ fairy_text = "라이는 사람 많은 곳에 가면 괜히 긴장해. 코로나 때, 모두가 서로를 조심해야 했던 기억이 아직 마음에 남아 있어. '바이러스는 아주 작은데… 사람 사이를 오가며 전염될 수 있어.' 라이는 말해. 바이러스는 세포보다 훨씬 작은 감염성 입자로, 숙주의 세포 안에서만 증식할 수 있어. 그래서 한 번 퍼지기 시작하면 정말 빠르게 번져."
+
+    show screen fairy_icon 
+    npc "알림! 새로운 지식 해제!"
+
+    # 사용자가 클릭할 때까지 기다림
+    while not fairy_clicked:
+        $ renpy.pause(0.1, hard=True)  # 0.1초마다 체크
+
+    hide screen fairy_icon
+    $ fairy_clicked = False
+
     ex "그녀의 목소리는 처음으로, 강함이 아닌 ‘피로’로 젖어 있었다."
 
     # --- 선택지 ---
@@ -859,18 +914,7 @@ label rooftop_scene:
                 jump rona_bad
 
 # --- GOOD END ---
-label rona_good:
-    play music "audio/bgm/로나옥상_전환.mp3" fadein 2.0
-    rona "...뭐라고?"
-    me "너무 다르다고 해서, 같이 있으면 안 되는 건 아니잖아. 로나 네가 있어서... 이 학교가 조금 더 진짜같아."
-    rona "...너, 미쳤구나. 나한테 감염되면 진짜 위험할 수도 있는데."
-    me "그럼 감염되면 되지. 난 네가 전염시키는 게 싫지 않아."
-    ex "로나는 입을 다문다. 잠시 바람만 불고, 붉은 하늘이 그녀의 얼굴을 비춘다."
-    rona "...하, 이상한 애네. 이상하게 따뜻해서... 짜증나."
-    rona "받아. 이건 내가 준 첫 감염이야."
-    ex "주인공은 사탕을 손에 쥐며 웃는다. 바람에 둘의 머리카락이 엇갈린다."
-    ex "노을빛이 점점 옅어지고, 화면엔 부드러운 빛만 남는다."
-    return
+
 
 # --- BAD END ---
 label rona_bad:
@@ -889,7 +933,61 @@ label rona_bad:
     menu:
         "다시 시작한다":
             jump start
-    return
-    return
+    label rona_good:
+    play music "audio/bgm/로나옥상_전환.mp3" fadein 2.0
+    rona "...뭐라고?"
+    me "너무 다르다고 해서, 같이 있으면 안 되는 건 아니잖아. 로나 네가 있어서... 이 학교가 조금 더 진짜같아."
+    rona "...너, 미쳤구나. 나한테 감염되면 진짜 위험할 수도 있는데."
+    me "그럼 감염되면 되지. 난 네가 전염시키는 게 싫지 않아."
+    ex "로나는 입을 다문다. 잠시 바람만 불고, 붉은 하늘이 그녀의 얼굴을 비춘다."
+    rona "...하, 이상한 애네. 이상하게 따뜻해서... 짜증나."
+    rona "받아. 이건 내가 준 첫 감염이야."
+    ex "주인공은 사탕을 손에 쥐며 웃는다. 바람에 둘의 머리카락이 엇갈린다."
+    ex "노을빛이 점점 옅어지고, 화면엔 부드러운 빛만 남는다."
+    
+
+    label ending_common:
+    play music "audio/bgm/버스_신비.mp3" fadein 2.0
+
+    scene black with dissolve
+    pause 1.0
+    show fairy at rightChar with dissolve
+    ex "…………"
+
+    scene bus2 with slowfade
+
+    me "…어?"
+
+    ex "주변이 갑자기 일그러진다. 색이 번지고, 소리가 멀어지더니—"
+
+    ex "{b}ERROR: 생명체 분류 불가{/b}"
+    ex "{b}ERROR: 상호 연결 상태 파손{/b}"
+    ex "{b}REBOOTING…{/b}"
+
+    scene lab with slowfade       # ← 연구실 배경
+
+
+    ex "눈을 뜨자, 익숙한 형광등 불빛이 머리 위에 있었다."
+    ex "차가운 바람도, 붉은 노을도, 따뜻했던 목소리도 없다."
+
+    me "…다시 연구실로 돌아온 거야?"
+
+    pause 1.0
+
+    ex "분명히 함께 있었는데."
+    ex "웃고, 이야기하고, 손을 뻗으면 닿을 것 같았는데…"
+
+    pause 1.0
+
+    ex "그 세계는 마치 꿈처럼, 손가락 사이로 스르르 빠져나가 있었다."
+
+    me "……그래. 다시 시작하면 돼."
+
+    scene black with dissolve
+    pause 1.2
+
+    centered "{size=45}END{/size}"
 
     return
+
+  
